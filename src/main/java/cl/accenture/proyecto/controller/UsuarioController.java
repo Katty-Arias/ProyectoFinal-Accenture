@@ -11,6 +11,7 @@ import java.util.List;
 
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
@@ -20,7 +21,6 @@ public class UsuarioController {
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
-
 
     @RequestMapping("/loginUsuario")//funciona
     protected String login(@RequestParam("email") String email, @RequestParam("contrasena") String contrasena, ModelMap map)  {
